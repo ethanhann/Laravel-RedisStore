@@ -1,8 +1,8 @@
 ###Why is this useful?
 
-The RedisStore that comes with the Laravel Cache uses does not compress string data out of the box.
-  The RedisStore in this package does. Caching string data may or may not make sense for your use case, 
-  but can save a ton memory and/or network bandwidth depending on cached item size and request frequency.
+The RedisStore that comes with the Laravel Cache does not compress string values out of the box.
+  The RedisStore in this package does. Caching string values can save a ton memory and/or network bandwidth depending on 
+  cached item size and request frequency.
 
 ###How do I use it?
 
