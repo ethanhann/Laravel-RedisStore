@@ -9,13 +9,16 @@ The RedisStore that comes with the Laravel Cache does not compress string values
 Add a [custom cache driver](https://laravel.com/docs/5.3/cache#adding-custom-cache-drivers), like this...
 
 ```php
-Cache::extend('ehann-redis', function ($app) {
-    return Cache::repository(new \Ehann\Cache\RedisStore(
-        app('redis'),
-        app('config')['cache']['prefix'],
-        app('config')['connection']
-    ));
-});
+    public function boot()
+    {
+        Cache::extend('ehann-redis', function ($app) {
+            return Cache::repository(new \Ehann\Cache\RedisStore(
+                $app['redis'],
+                $app['config']['cache.prefix'],
+                $app['config']['cache.stores.redis.connection']
+            ));
+        });
+    }
 ```
 
 Add the **ehann-redis** custom driver to the redis store config in config/cache.php...
