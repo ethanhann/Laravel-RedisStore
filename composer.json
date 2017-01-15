@@ -1,6 +1,5 @@
 {
     "name": "ehann/laravel-redis-store",
-    "type": "library",
     "description": "Adds functionality to the built-in Cache's RedisStore.",
     "license": "MIT",
     "authors": [
