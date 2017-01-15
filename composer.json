@@ -1,0 +1,26 @@
+{
+    "name": "ehann/laravel-redis-store",
+    "type": "library",
+    "description": "Adds functionality to the built-in Cache's RedisStore.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ethan Hann",
+            "email": "ethanhann@trackrevenue.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "laravel/framework": "^5.3"
+    },
+    "require-dev": {
+        "mockery/mockery": "~0.9.4",
+        "phpunit/phpunit": "^5.4",
+        "predis/predis": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ehann\\": "src/Ehann/"
+        }
+    }
+}
