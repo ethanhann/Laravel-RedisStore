@@ -6,6 +6,12 @@ The RedisStore that comes with the Laravel Cache does not compress string values
 
 ###How do I use it?
 
+Install the package...
+
+```sh
+composer require ehann/laravel-redis-store
+```
+
 Add a [custom cache driver](https://laravel.com/docs/5.3/cache#adding-custom-cache-drivers), like this...
 
 ```php
