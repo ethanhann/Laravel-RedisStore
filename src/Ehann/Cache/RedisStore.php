@@ -19,11 +19,6 @@ class RedisStore extends IlluminateRedisStore
     protected $useCompression = true;
 
     /**
-     * @var int
-     */
-    protected $compressionLevel = -1;
-
-    /**
      * Get whether or not compression is enabled.
      *
      * @return bool
@@ -44,22 +39,6 @@ class RedisStore extends IlluminateRedisStore
     }
 
     /**
-     * @return int
-     */
-    public function getCompressionLevel()
-    {
-        return $this->compressionLevel;
-    }
-
-    /**
-     * @param int $compressionLevel
-     */
-    public function setCompressionLevel($compressionLevel)
-    {
-        $this->compressionLevel = $compressionLevel;
-    }
-
-    /**
      * Serialize the value.
      *
      * @param  mixed  $value
@@ -70,7 +49,7 @@ class RedisStore extends IlluminateRedisStore
         if (is_numeric($value) || is_null($value)) {
             return $value;
         }
-        return $this->useCompression ? gzcompress(serialize($value), $this->compressionLevel) : serialize($value);
+        return $this->useCompression ? gzcompress(serialize($value)) : serialize($value);
     }
 
     /**
