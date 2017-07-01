@@ -60,7 +60,7 @@ class RedisStore extends IlluminateRedisStore
      */
     protected function unserialize($value)
     {
-        if (is_string($value)) {
+        if (!is_numeric($value) && is_string($value)) {
             $isValueCompressed = bin2hex(mb_strcut($value, 0, 1)) === self::COMPRESSION_ENABLED_FILE_HEADER;
             return unserialize($isValueCompressed ? gzuncompress($value) : $value);
         }
